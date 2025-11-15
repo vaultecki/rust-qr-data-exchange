@@ -1,0 +1,29 @@
+[package]
+name = "qr-data-exchange"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# --- GUI ---
+iced = { version = "0.13", features = ["tokio", "image"] }
+
+# --- Async Runtime ---
+tokio = { version = "1", features = ["fs"] }
+
+# --- QR & Bildverarbeitung ---
+qrcode = { version = "0.14", default-features = false, features = ["image"] }
+image = { version = "0.25", features = ["png"] }
+rqrr = "0.7"
+
+# --- Daten & Kryptografie ---
+sodiumoxide = "0.2"
+zstd = "0.13"
+rmp-serde = "1.1"
+serde = { version = "1.0", features = ["derive"] }
+base64 = "0.22"
+
+# --- Hilfsprogramme ---
+rfd = "0.14" # Für Datei-Dialoge
+thiserror = "1.0" # Für Error-Handling
+tracing = "0.1"
+tracing-subscriber = "0.3"
